@@ -1,0 +1,6 @@
+cat
+lion
+cow
+giraffe
+monkey
+bull
