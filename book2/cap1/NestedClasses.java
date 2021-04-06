@@ -57,7 +57,10 @@ final public class NestedClasses extends OtherClass{
 	//los inner class necesitan de una instancia de la clase que los envuelve [outer class ] para que puedan ser instanciadas
 	//class YX extends OtherClass.OtherX{}
 	//class YX extends otherClass.new OtherX{}
-	//static OtherClass otherClass=new OtherClass();
+	
+
+	//un simple miembro de clase del tipo OtherClass
+	static OtherClass otherClass=new OtherClass();
 
 	//abstract final class AFX {}//inner class no es valido que tenga modificador final y abstract
 	
