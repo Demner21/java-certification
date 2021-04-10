@@ -31,7 +31,7 @@ public class ThreadsDemo{
        		 }
 	}
 	
-	public static void main (String ...z){	
+	public static void main (String ...z) throws Exception{	
 		//uso de threads --runnable y clase que extiende de Thread
 		var a = new ThreadsDemo();
 		System.out.println("begin");
@@ -72,8 +72,63 @@ public class ThreadsDemo{
 		// <T> Future <T> submit(Callable <T> task)
 		// <T> List<Future<T>> invokeAll (Collection <? extends Callable<T>> task) throws InterruptedException
 		// <T> T invokeAny (Collection <? extends Callable<T>> task) throws InterruptedException, ExecutionException
+		//
+		// Waiting for results
+		// como sabemos si una tarea enviada al ExecutorService ha sido completada
+		// El metodo submit retorna un: java.util.concurrent.Future<V>
+		// Future es una interface: <para el examen no es necesario saber las clases que la implementan>
+		
+		try{
+			service = Executors.newSingleThreadExecutor();
+			//var lambda = ()-> { for (int i =0; i < 10 ; i++) ThreadsDemo.counter++; } ;
+			Runnable lambda = ()-> { for (int i =0; i < 500 ; i++) ThreadsDemo.counter++; } ;
+
+			Future <?> result = service.submit( lambda );
+			result.get(10, TimeUnit.SECONDS);
+			System.out.println("Reached!");
+		}catch (TimeoutException e){
+			System.out.println("Not reached in time!");
+		}finally {
+
+			if (service !=null) service.shutdown();
+		}
+
+		// uso de callable
+		// la interface: java.util.concurrent.Callable es similar a Runnable excepto que el metodo call que posee
+		// retorna un valor y puede lanzar una checked exception
+		//
+		// A menudo, Callable es preferida que Runnable, debido a que permite mayores detalles sean devueltos facilmente de la tarea luego
+		// que sea completada
+		//
+		// Como se indicó lineas atras, ExecutorService proporciona un metodo overload submit que acepta Callable
+		//
+			System.out.println("ejemplo de Callable");
+		try{
+			service = Executors.newSingleThreadExecutor();
+			Callable<Integer> lambda2= ()-> 30 + ThreadsDemo.counter;
+			Future <Integer> result2= service.submit(lambda2);
+
+			System.out.println(result2.get());
+		} finally {
+
+			if (service !=null) service.shutdown();
+		}
+
+
+		// invokeAll() vs invokeAny()
+		// para el metodo invokeAll()se esperará indefinidamente [o algun tiempo que sea proporcionado] hasta que todas las tareas sean completadas
+		// mientas quen en el metodo invokeAny() esperará indefinidamente hasta que al menos una tarea sea completada
+
+
+
+		//Scheduling tasks
+		//A menudo necesitamos establecer un horario a una tarea para que ocurra en cierto tiempo futuro o puede ser que necesitemos que dicha 
+		//tarea sea repetida a en un cierto intervalo
+
+
 
 
 
 	}
+	private static int counter =0;
 }
