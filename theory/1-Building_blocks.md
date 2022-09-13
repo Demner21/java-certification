@@ -8,10 +8,10 @@
 > JDK contiene el software minimo que se necesita para desarrollar con Java.
 
 comandos básicos
-- javac : para compilar
-- java : para ejecutar
-- jar : para empaquetar
-- javadoc : ?
+- javac : generar java filess en .class bytecode
+- java : ejecutar un programa
+- jar : empaquetar archivos
+- javadoc : generar documentacion
 
 ### Averigua tu versión de jdk:
 > javac -version
@@ -59,8 +59,10 @@ static public void main (final String... args){}
 ### Packages
 > solo aceptan letras y números separados por puntos
 
-> java.lang es el import por defecto
+> java.lang es importado por defecto
 
 
 package pe.dmnr :heavy_check_mark:
+package pe.dmnr-bad :x:
+package PE.DMNER_BAD :x:
 
