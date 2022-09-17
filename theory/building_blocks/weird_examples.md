@@ -70,3 +70,19 @@ jar -cvf myJar.jar -C classes .
 ```
 
 
+### inicialización de variables
+Variables locales
+
+```
+public class Test{
+  final void _t€st(){
+  int $myVar_1;
+ int €myVar_2;
+    if(true){
+        $myVar_1=21;
+           €myVar_2=37;
+       }else{
+          €myVar_2=21;}
+}
+}
+```
