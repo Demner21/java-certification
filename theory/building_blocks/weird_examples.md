@@ -59,3 +59,14 @@ class Exam{
 	System.out.println("Success");}}
 //Exception is also into java.lang package and in java.base module	
 ```
+
+```
+//compilar en el directorio classes
+javac -d classes Exam.java
+//ejecutar usando el directorio classes
+java -cp classes Exam
+//crear un jar llamar myJar.jar tomando los .class del directorio classes y colocalo en mi directorio actual
+jar -cvf myJar.jar -C classes .
+```
+
+
