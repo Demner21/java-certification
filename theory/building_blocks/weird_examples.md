@@ -1,5 +1,5 @@
 
-# Failed cases :x:
+# Failed cases of compilation :x:
 ### Case 1
 > java Exam :x: 
 
@@ -19,7 +19,7 @@ class Exam{
 ```
 
 
-# Success cases :heavy_check_mark:
+# Success cases of compilation :heavy_check_mark:
 ### Case 1
 > java Exam.java
 ```
@@ -68,6 +68,21 @@ java -cp classes Exam
 //crear un jar llamar myJar.jar tomando los .class del directorio classes y colocalo en mi directorio actual
 jar -cvf myJar.jar -C classes .
 ```
+# Succes cases of initialization :heavy_check_mark:
+```
+public class Test{
+  final void _t€st(){
+  int $myVar_1;
+ int €myVar_2;
+    if(true){
+        $myVar_1=21;
+           €myVar_2=37;
+       }else{
+          €myVar_2=21;}
+}
+}
+```
+
 # Failed cases of uses of block texts :x:
 
 ```
@@ -85,4 +100,6 @@ jar -cvf myJar.jar -C classes .
 
  var number=7;
  number="test";
-```
+### inicialización de variables
+Variables locales
+
