@@ -68,5 +68,21 @@ java -cp classes Exam
 //crear un jar llamar myJar.jar tomando los .class del directorio classes y colocalo en mi directorio actual
 jar -cvf myJar.jar -C classes .
 ```
+# Failed cases of uses of block texts :x:
+
+```
+ var demo="""test
+            """;
+```
 
 
+# Failed cases of uses of VAR :x:
+
+```
+ var m=null; //no compila
+ Strinb a, var b=4;
+ public final void (var a , var b){}
+
+ var number=7;
+ number="test";
+```
