@@ -39,6 +39,14 @@
 
          System.out.println(demo2);
 
+            var numberMagic=2;
+         var tempVar= switch(numberMagic){
+            case 1-> "A";
+            case 2-> "B";
+            default-> "C";
+         };
+         System.out.println(tempVar);
+
     }
 }
 enum Demo{
