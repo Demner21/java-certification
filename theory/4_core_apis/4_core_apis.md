@@ -29,6 +29,7 @@ var exampleConcatenation="A" + "B";
 - If either operand is a String, + means concatenation
 - The expression is evaluated left to right
 
+> check StringCoreApi::weirdConcatenation
 ```
 System.out.println(3+6);  //9
 System.out.println("3+6");  //3+6
@@ -37,7 +38,8 @@ System.out.println("3"+"6"+ 3);  //363
 System.out.println(3+6+"3");  //93
 System.out.println("3"+6+3);  //363
 System.out.println("3"+null);  //3null
-System.out.println(3+null);  // ?  ...weird
+System.out.println(3+null);  // ?  ...weird :: no compila
+System.out.println(3+4+"a"+"true"+ true + false);  // ...mega weird :: si compila!!!
 ```
 
 
