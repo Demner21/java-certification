@@ -63,6 +63,21 @@ class Exam{
 ```
 //compilar en el directorio classes
 javac -d classes Exam.java
+// el siguiente comando falla:
+//Considera la siguiente estructura
+/**
+  -book1
+    -1-building_blocks
+      -Test.java
+  -classes
+*/
+javac  -d ./classes/  --class-path ./book1/1-building_blocks/Test.java [incorrecto::: comando mal usado]
+
+javac  -d ./classes/  \
+   --class-path ./book1/1-building_blocks/  \
+   ./book1/1-building_blocks/Test.java  [comando correcto]
+
+
 //ejecutar usando el directorio classes
 java -cp classes Exam
 //crear un jar llamar myJar.jar tomando los .class del directorio classes y colocalo en mi directorio actual
