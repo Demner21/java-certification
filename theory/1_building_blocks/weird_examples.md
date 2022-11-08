@@ -5,7 +5,7 @@
 
 **THIS IS WRONG** NEED .java extension at the end of the file. Only work for a simple one file java program. This feature is called ***single-file source code***
 
-> java Exam.java :x:
+> java Exam.java :x: check comment into Exam example 
 
 > javac Exam.java :x:
 
@@ -16,6 +16,16 @@ class Exam{
  }
 }
 // Failed because the order of [] is wrong
+```
+```
+class BadMainCase{
+  static final public void main(String Z...){
+         var temp= new BadMainCase();
+         temp.doSomething();   
+    }
+    void doSomething(){}
+}
+//Failed because wrong order of ... (bad place of varargs)
 ```
 
 
@@ -80,6 +90,10 @@ javac  -d ./classes/  \
 
 //ejecutar usando el directorio classes
 java -cp classes Exam
+
+//comando erroneo, no existe la option -d para el comando java
+java -d ./classes/ ClassDesing
+
 //crear un jar llamar myJar.jar tomando los .class del directorio classes y colocalo en mi directorio actual
 jar -cvf myJar.jar -C classes .
 ```
