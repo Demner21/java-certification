@@ -1,0 +1,102 @@
+# Chapter 3: Making decisions
+## for, while, and do-while structures
+```
+for(var i=INT1;i<INT2;i++){System.out.println(i)}
+--what of the next variations produce the same result?
+for (int i=INT1; i<INT2;System.out.println(++i))
+for (int i=INT1; i++<INT2;System.out.println(i))
+
+int i=INT1; while(i++<INT2){System.out.println(i)}
+
+int i=INT1; do{System.out.println(i);}while(i++<INT2)
+```
+
+# Chapter 4: Core Apis
+## Strings
+```
+// obtain 456
+String str="""
+            0123\
+            4567""";
+str.substring(4,7) //456  tricky question
+
+```
+## Dates and Times
+```
+Period
+
+Duration
+```
+
+# Chapter 8: Lambdas and functional Interfaces
+## Lambda expresions for java.utli.Predicate
+Valid expressions for Predicate lambdas
+> x-> x==null
+
+> x-> true
+
+# Chapter 9 Collections and generics
+## using Enum example and TreeSet
+> TreeSet
+```
+//What is the result?
+enum Title {
+    MR("Mr"),MS1("Ms."),MS2("Ms.");
+    private String title;
+    private Title(String s){
+        title=s;
+    }
+}
+
+public class TestClass{
+    public static void main(String[] args){
+        var ts=new TreeSet<Title>(); //TODO study how TreeSet works
+        ts.add(Title.MS2);
+        ts.add(Title.MR);
+        ts.add(Title.MS1);
+        for(Title t: ts){
+            System.out.println(t)
+        }
+    }
+}
+
+// answer: MR MS1, Ms2
+```
+
+## Chapter 12: Modules
+
+> The foundational APIs of the Java SE pltform are found in 
+java.base.module
+
+> JDK is divided into a set of modules that can be combined at compile time, buil time and run time into a variety of configurations
+
+> The modularJDK is divided of two kinds of modules- the standard modules and the non standard modules
+
+> service that implements api.ServiceZ
+
+> loader of a service
+
+## Chapter 14: I/O
+## method get name
+```
+import java.nio.file.Path;
+import java.nio.file.Paths;
+public class PathTest{
+    static Path p1 = Paths.get("c:\\main\\project\\Starter.java");
+    public static String getData(){
+        String data=p1.getName(0).toString();
+        return data;
+    }
+    public static void main(String[] args){
+        System.out.println(getData());
+    }
+}
+//Answer: main
+```
+
+## Chapter 15; JDBC
+### Third party JDBC driver
+> Which of the following actions must you take to retrieve a connection using that driver in your JDBC progrm?
+
+- Put the driver jar in the classpath
+- Retrieve a connection using *DriverManager.getConnection* 
