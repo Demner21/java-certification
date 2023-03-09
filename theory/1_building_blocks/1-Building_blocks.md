@@ -131,14 +131,23 @@ public class ClassB{
 
 ### Compilando en otro directorio
 Por defecto el comando **javac** compila las clases
-> javac -d classes packagea/ClassA.java  packageb/ClassB.java
+>  si usamos el parametro d **directory** se puede poner los compilados en un directorio
 
---para ejecutar
+```
+javac -d classes packagea/ClassA.java  packageb/ClassB.java
+```
+
+### para ejecutar
 > java -cp classes packageb.ClassB
 
 > java -classpath classes packageb.ClassB
 
 > java --class-path classes packageb.ClassB
+
+### creando un archivo jar
+
+> jar -cvf myJar.jar .
+> jar --create --verbose --file myJar.jar .
 
 # Creando objetos
 En esta seccion se verán

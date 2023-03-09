@@ -25,5 +25,6 @@ public final class Rhinoceros extends Mammal {}  //child class ::subclass
 |final |the class may not be extended| chapter 6|
 |abstract |the class is abstract, may contain abstract methods, and requires a concrete subclass to instantiate| chapter 6|
 
+# Inicializando objetos
 
 
