@@ -28,12 +28,74 @@ public class Mammal{} //parent class::superclass
 public final class Rhinoceros extends Mammal {}  //child class ::subclass
 ```
 
-## Modificadores de clase
-|modifier |description| chapter covered |
-|------|------------------------------|----------|
-|final |the class may not be extended| chapter 6|
-|abstract |the class is abstract, may contain abstract methods, and requires a concrete subclass to instantiate| chapter 6|
+# Encapsulando data con Records
+```
+record MyRecord(String name) {
 
-# Inicializando objetos
+    //canonical constructor
+    /*MyRecord(String name) {
+        name = name.isBlank() ? "Tom" : name;
+        this.name = name;
+    }*/
+
+    //compact constructor
+    MyRecord {
+        name = name.isBlank() ? "Tom" : name;
+    }
+
+    static int getConstant() {
+        return Double.valueOf("21").intValue();
+    }
+
+
+    public static void main(String[] args) {
+        var listRecords
+                = List.of(new MyRecord(""), new MyRecord("Eru"));
+
+        listRecords.stream()
+                .map(MyRecord::name)
+                .forEach(System.out::println);
+
+        System.out.println(MyRecord.getConstant());
+    }
+}
+```
+```
+Tom
+Eru
+21
+```
+
+> Just as interfaces are implicitly abstract, records are also implicitly final. 
+
+> The final modifier is optional but assumed.
+```
+public final record Demo(String name);
+```
+> los records son **final** implicitamente, no pueden ser heredados
+## Constructores
+- Normal Canonical Constructor aka Long Constructor
+   
+   ```
+    public record MyRecord(String name){
+
+        public MyRecord(String name){
+            name = name.isBlank() ? "Tom" : name;
+            this.name=name;
+        }
+    }
+   ``` 
+- Compact Constructor: 
+    > usado para validaciones y transformaciones
+    
+    > no requiere parametros 
+   ```
+    public record MyRecord(String name){
+
+        public MyRecord{
+            name = name.isBlank() ? "Tom" : name;
+        }
+    }
+   ``` 
 
 
