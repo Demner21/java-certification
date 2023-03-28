@@ -28,6 +28,9 @@ Period
 Duration
 ```
 
+# chapter 7: Beyond classes
+
+
 # Chapter 8: Lambdas and functional Interfaces
 ## Lambda expresions for java.utli.Predicate
 Valid expressions for Predicate lambdas
