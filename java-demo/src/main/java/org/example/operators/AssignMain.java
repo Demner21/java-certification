@@ -43,5 +43,11 @@ public class AssignMain {
         long otherLong = 5;
         char other_char_2 = (char) otherLong;
 
+
+        //creating arrays
+        var demo = new String[]{"a", "b"};
+        String []sa = new String[]{"a", "b"};
+
+
     }
 }
