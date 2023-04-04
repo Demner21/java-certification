@@ -26,6 +26,32 @@ public class Temp implements GoodModifierSimplified2{
 }
 
 ```
+# Nested classes
+## Trying to create an instance of nested class from an outer static method :x:
+```
+package org.example.nested;
+
+public class SimpleClass {
+
+    private final class InnerClassA {
+        static void method() {
+            System.out.println("inner class A");
+        }
+
+        void method2() {
+            System.out.println("inner class A//method 2");
+        }
+
+    }
+    
+    static void badCall(){
+        InnerClassA innerClassA = new InnerClassA(); //bad won't compile
+    }
+
+}
+```
+
+
 # Records bad examples
 ## Trying to use a canonical constructor without set field :x:
 
@@ -71,7 +97,7 @@ public class Temp implements GoodModifierSimplified2{
 
      }
    ```
- ## Rigth way    
+ ## Rigth way :heavy_check_mark:
    ``` 
    package org.example.record;
 

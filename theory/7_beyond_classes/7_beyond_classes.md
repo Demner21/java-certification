@@ -115,4 +115,36 @@ record Time(int hrs, int min) {
 ```
 
 
+# Creating Nested classes
+> A nested class is a class that is defined within another class
+
+A nested class can come in one of four flavors
+
+1. inner class: clases no estaticas definidas al mismo nivel de miembros : { methods, constructor, fields }
+2. static nested class: clases estaticas definidas al mismo nivel de miembros : { methods, constructor, fields }
+3. local class: clases definidas dentro del cuerpo de un metodo 
+4.  anonymous class: caso especial de una clase local que no tiene nombre
+---
+
+```
+package org.example.nested;
+
+public class SimpleClass {
+
+    private final class InnerClassA {
+        static void method() {
+            System.out.println("inner class A");
+        }
+
+        void method2() {
+            System.out.println("inner class A//method 2");
+        }
+
+    }
+}
+```
+
+
+
+
 
