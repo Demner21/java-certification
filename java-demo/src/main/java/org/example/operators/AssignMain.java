@@ -2,6 +2,14 @@ package org.example.operators;
 
 public class AssignMain {
     public static void main(String[] args) {
+        Character dd=2; //Autoboxing
+        Integer kk=2;
+        int hh=2;
+        float mmm = hh; // int to float
+        short jj=2;
+        char tt=(char)hh;
+        tt=(char)jj;
+
 
         //byte - short - int - long
         //float - double
