@@ -1,17 +1,19 @@
-# Bad examples of interfaces :x:
+# Bad examples of Lambdas :x:
+No se puede usar var con lambdas
 ```
-public final abstract interface BadMofifier{} //doesn't compile
+var predicate = (String a) -> {
+                return a.isEmpty();};
 
-//.\book1\7-beyond_classes\BeyondClasses.java:1: error: illegal combination of modifiers: interface and final
 ```
 
-# Good examples of interfaces :heavy_check_mark:
+# Good examples java.util.function.Predicate<T>-test :heavy_check_mark:
 ```
-abstract interface GoodMofifier1{} 
-public abstract interface GoodMofifier2{} 
-
-interface GoodModifierSimplified1{}
-public interface GoodModifierSimplified2{}
+ Predicate<String> predicateString = (String a) -> {
+     return a.isEmpty();
+ };
+ Predicate<String> predicate = (a) -> a.isEmpty();
+ Predicate<String> predicate_2 = a -> a.isEmpty();
+ Predicate<String> predicate_3 = String::isEmpty;
 ```
 
 # Trying to instantiate an interfaces :x:
