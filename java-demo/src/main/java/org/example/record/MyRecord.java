@@ -2,7 +2,7 @@ package org.example.record;
 
 import java.util.List;
 
-record MyRecord(String name) {
+public record MyRecord(String name) implements Comparable<MyRecord> {
 
     //canonical constructor
     /*MyRecord(String name) {
@@ -11,7 +11,7 @@ record MyRecord(String name) {
     }*/
 
     //compact constructor
-    MyRecord {
+    public MyRecord {
         name = name.isBlank() ? "Tom" : name;
     }
 
@@ -29,5 +29,10 @@ record MyRecord(String name) {
                 .forEach(System.out::println);
 
         System.out.println(MyRecord.getConstant());
+    }
+
+    @Override
+    public int compareTo(MyRecord o) {
+        return name.compareTo(o.name);
     }
 }

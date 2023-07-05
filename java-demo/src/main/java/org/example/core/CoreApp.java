@@ -1,5 +1,8 @@
 package org.example.core;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CoreApp {
     public static void main(String[] args) {
         String demneru = "demneru";
@@ -11,5 +14,7 @@ public class CoreApp {
                 1234567
                 """;
         System.out.println(otherName.substring(4, 9));//eru12
+
+        List<?> demoString = new ArrayList<>();
     }
 }
